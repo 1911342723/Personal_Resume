@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0m6vkxtml6l2"]
+
+[ext_resource type="Texture2D" uid="uid://1i3wjx38cgvw" path="res://assets/legacy_fantasy/Tiles.png" id="1_b2ob0"]
+
+[sub_resource type="Gradient" id="Gradient_myl6e"]
+colors = PackedColorArray(1, 0.345098, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_60fv7"]
+gradient = SubResource("Gradient_myl6e")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="torch" type="Node2D"]
+position = Vector2(1, -1)
+
+[node name="Tiles" type="Sprite2D" parent="."]
+position = Vector2(2, -15)
+texture = ExtResource("1_b2ob0")
+region_enabled = true
+region_rect = Rect2(354, 240, 17, 30)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tiles"]
+position = Vector2(-2, -10.5)
+scale = Vector2(1.875, 2.04687)
+texture = SubResource("GradientTexture2D_60fv7")

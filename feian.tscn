@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkltfymbctrp2"]
+
+[ext_resource type="Texture2D" uid="uid://dre22dxdgy387" path="res://assets/generic_char/char_green_2.png" id="1_56uh5"]
+[ext_resource type="Script" uid="uid://h5yuliewlxn0" path="res://objects/CharGreen2.gd" id="2_qedb7"]
+
+[node name="CharGreen2" type="Sprite2D"]
+position = Vector2(20, -20)
+rotation = 0.785398
+texture = ExtResource("1_56uh5")
+script = ExtResource("2_qedb7")

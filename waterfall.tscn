@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnvhdtsc5sr2p"]
+
+[ext_resource type="Script" uid="uid://b2ygkx7acnp48" path="res://classes/Teleporter.gd" id="1_s8hqx"]
+[ext_resource type="Texture2D" uid="uid://1i3wjx38cgvw" path="res://assets/legacy_fantasy/Tiles.png" id="2_c4apx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oou3l"]
+size = Vector2(45, 181)
+
+[node name="Waterfall" type="Area2D"]
+script = ExtResource("1_s8hqx")
+
+[node name="Tiles" type="Sprite2D" parent="."]
+position = Vector2(0, 1.09127)
+scale = Vector2(1, 2.90028)
+texture = ExtResource("2_c4apx")
+region_enabled = true
+region_rect = Rect2(52, 272, 44, 62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_oou3l")

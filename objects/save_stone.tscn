@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://btn7p3ng6glfl"]
+
+[ext_resource type="Script" uid="uid://cm3gk5xgkr76s" path="res://objects/save_stone.gd" id="1_flotg"]
+[ext_resource type="Texture2D" uid="uid://bwy6o43b3iyoy" path="res://assets/legacy_fantasy/Fountain/FlyingObelisk_no_lightnings_no_letter.png" id="3_w25td"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6eax"]
+atlas = ExtResource("3_w25td")
+region = Rect2(0, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25td"]
+atlas = ExtResource("3_w25td")
+region = Rect2(200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1fnj"]
+atlas = ExtResource("3_w25td")
+region = Rect2(400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nkv8"]
+atlas = ExtResource("3_w25td")
+region = Rect2(600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ucmg"]
+atlas = ExtResource("3_w25td")
+region = Rect2(800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvq8n"]
+atlas = ExtResource("3_w25td")
+region = Rect2(1000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di6p3"]
+atlas = ExtResource("3_w25td")
+region = Rect2(1200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pns0p"]
+atlas = ExtResource("3_w25td")
+region = Rect2(1400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alnpa"]
+atlas = ExtResource("3_w25td")
+region = Rect2(1600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03xcb"]
+atlas = ExtResource("3_w25td")
+region = Rect2(1800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ejty"]
+atlas = ExtResource("3_w25td")
+region = Rect2(2000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5aj0"]
+atlas = ExtResource("3_w25td")
+region = Rect2(2200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhtmr"]
+atlas = ExtResource("3_w25td")
+region = Rect2(2400, 0, 200, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_extyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6eax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w25td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1fnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nkv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ucmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvq8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di6p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pns0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alnpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03xcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ejty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5aj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhtmr")
+}],
+"loop": true,
+"name": &"activated",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbm8j"]
+size = Vector2(46, 72)
+
+[sub_resource type="Gradient" id="Gradient_750ij"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sm3ci"]
+gradient = SubResource("Gradient_750ij")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="SaveStone" type="Area2D"]
+script = ExtResource("1_flotg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.38419e-07, -53)
+scale = Vector2(0.382383, 0.2975)
+sprite_frames = SubResource("SpriteFrames_extyy")
+animation = &"activated"
+autoplay = "activated"
+frame_progress = 0.568713
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -36)
+shape = SubResource("RectangleShape2D_nbm8j")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.5, -57.5)
+scale = Vector2(1.00391, 1.00391)
+enabled = false
+color = Color(0.420932, 0.53701, 0.752033, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_sm3ci")
+texture_scale = 1.62
